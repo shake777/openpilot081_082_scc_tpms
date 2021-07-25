@@ -51,20 +51,20 @@ class CarInterface(CarInterfaceBase):
 
     ret.lateralTuning.lqr.scale = 1700.
     ret.lateralTuning.lqr.ki = 0.01
-    ret.lateralTuning.lqr.dcGain = 0.002856
+    ret.lateralTuning.lqr.dcGain = 0.00275
 
     ret.lateralTuning.lqr.a = [0., 1., -0.22619643, 1.21822268]
     ret.lateralTuning.lqr.b = [-1.92006585e-04, 3.95603032e-05]
     ret.lateralTuning.lqr.c = [1., 0.]
-    ret.lateralTuning.lqr.k = [-110.73572306, 451.22718255]
-    ret.lateralTuning.lqr.l = [0.3233671, 0.3185757]
+    ret.lateralTuning.lqr.k = [-110., 451.]
+    ret.lateralTuning.lqr.l = [0.33, 0.318]
 
     ret.steerRatio = 17.2
-    ret.steerActuatorDelay = 0.80
-    ret.steerLimitTimer = 3.0
-    ret.steerRateCost = 0.38
+    ret.steerActuatorDelay = 0.10
+    ret.steerLimitTimer = 1.6
+    ret.steerRateCost = 0.50
     ret.steerMaxBP = [0.]
-    ret.steerMaxV = [1.4]
+    ret.steerMaxV = [1.3]
 
     # longitudinal
     ret.longitudinalTuning.kpBP = [0, 10. * CV.KPH_TO_MS, 20. * CV.KPH_TO_MS, 40. * CV.KPH_TO_MS, 70. * CV.KPH_TO_MS, 100. * CV.KPH_TO_MS, 130. * CV.KPH_TO_MS]
@@ -229,7 +229,7 @@ class CarInterface(CarInterfaceBase):
       ret.centerToFront = ret.wheelbase * 0.4
     elif candidate in [CAR.K7, CAR.K7_HEV]:
       tire_stiffness_factor = 0.7
-      ret.mass = 1580. + STD_CARGO_KG
+      ret.mass = 1650. + STD_CARGO_KG
       ret.wheelbase = 2.855
       ret.centerToFront = ret.wheelbase * 0.4
     elif candidate == CAR.SELTOS:
