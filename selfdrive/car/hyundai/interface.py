@@ -44,7 +44,7 @@ class CarInterface(CarInterfaceBase):
       if fw.ecu == "eps" and b"," in fw.fwVersion:
         eps_modified = True
 
-    ret.maxSteeringAngleDeg = 125.
+    ret.maxSteeringAngleDeg = 120.
 
     # lateral
     ret.lateralTuning.init('lqr')
@@ -64,7 +64,7 @@ class CarInterface(CarInterfaceBase):
     ret.steerLimitTimer = 3.0
     ret.steerRateCost = 0.38
     ret.steerMaxBP = [0.]
-    ret.steerMaxV = [1.1]
+    ret.steerMaxV = [1.0]
 
     # longitudinal
     ret.longitudinalTuning.kpBP = [0, 10.*CV.KPH_TO_MS, 20.*CV.KPH_TO_MS, 40.*CV.KPH_TO_MS, 70.*CV.KPH_TO_MS, 100.*CV.KPH_TO_MS, 130.*CV.KPH_TO_MS]
