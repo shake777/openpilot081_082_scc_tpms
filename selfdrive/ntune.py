@@ -76,7 +76,6 @@ class nTune():
 
         if self.checkValid():
           self.write_config(self.config)
-
           self.update()
         success = True
     except:
