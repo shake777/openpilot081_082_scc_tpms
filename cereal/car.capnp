@@ -220,6 +220,7 @@ struct CarState {
     speedOffset @3 :Float32;
     standstill @4 :Bool;
     nonAdaptive @5 :Bool;
+    enabledAcc @6 :Bool;
   }
 
   enum GearShifter {
@@ -311,8 +312,8 @@ struct CarControl {
   struct SccSmoother {
     longControl @0:Bool;
 
-    cruiseVirtualMaxSpeed @1 :Float32;
-    cruiseRealMaxSpeed @2 :Float32;
+    applyMaxSpeed @1 :Float32;
+    cruiseMaxSpeed @2 :Float32;
 
     logMessage @3 :Text;
 
